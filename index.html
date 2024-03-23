@@ -20,7 +20,26 @@
     <style>
     /*版面設定*/
     /* Create two unequal columns that floats next to each other */
+    /*放大動畫*/
+    @keyframes slideInAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+            /* 初始位置：向上移动50像素 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* 终止位置：回到原始位置 */
+        }
+    }
+
+
     /* Left column */
+
+
+
     body {
         margin: 0
     }
@@ -46,6 +65,8 @@
         text-align: center;
         margin-left: 20px;
         margin-top: 0;
+        opacity: 0;
+        animation: slideInAnimation 1s ease-in forwards;
     }
 
     .leftcolumn h2 {
@@ -107,6 +128,8 @@
         flex-grow: 1;
         flex: 1;
         margin-left: 20px;
+        opacity: 0;
+        animation: slideInAnimation 1s ease-in forwards;
     }
 
     .rightcolumn {
@@ -237,7 +260,8 @@
         position: fixed;
         top: 0px;
         width: 100%;
-        /*height: 50px;*/
+        z-index: 100;
+        height: 7%;
 
     }
 
@@ -362,6 +386,7 @@
     }
 
     /*字體字型大小設定*/
+
     .hometitle {
         font-size: 80px;
         color: white;
@@ -369,6 +394,7 @@
         font-weight: 400;
         font-style: normal;
         text-shadow: 5px 5px 1px #A49393;
+
     }
 
     .homecontent {

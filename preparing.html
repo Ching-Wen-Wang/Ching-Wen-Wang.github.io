@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!font Noto Sans Traditional Chinese-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Kaushan Script-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Oswald-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <link rel="icon" href="web_icon02.png" type="image/png">
+    <style>
+    /*版面設定*/
+    /* Create two unequal columns that floats next to each other */
+    /*放大動畫*/
+    @keyframes slideInAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+            /* 初始位置：向上移动50像素 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* 终止位置：回到原始位置 */
+        }
+    }
+
+    @keyframes slideLeftAnimation {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+            /* 初始位置：向上移动50像素 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+            /* 终止位置：回到原始位置 */
+        }
+    }
+
+
+    body {
+        margin: 0
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 80px;
+        margin: 0;
+        background-color: #E8B4B8;
+    }
+
+
+    /* Left column */
+    .leftcolumn {
+        float: left;
+        width: 60%;
+        box-sizing: border-box;
+        padding: 0px;
+        text-align: center;
+        margin-left: 50px;
+        margin-top: 0;
+        opacity: 0;
+        animation: slideLeftAnimation 1s ease-in forwards;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .leftcolumn h2 {
+        color: #67595E;
+        font-size: 18px;
+        text-align: left;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 800;
+        margin-bottom: -10px;
+        margin-top: 10px;
+
+
+    }
+
+
+    .leftcolumn h3 {
+        color: #67595E;
+        font-size: 13px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        text-align: left;
+        font-weight: 400;
+
+
+    }
+
+    /*button*/
+    .button-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        /* 添加这一行 */
+    }
+
+    .button {
+        background-color: #F9F1F0;
+        box-shadow: 5px 5px 1px #A49393;
+        width: 300px;
+        height: 50px;
+        /* 設置固定寬度以防止換行 */
+        border-radius: 10px;
+        padding: 5px;
+        margin: 10px;
+        /* 控制按鈕之間的間距 */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    .button h3 {
+        margin: 0;
+        /* 移除 h3 元素的默认外边距 */
+        font-weight: 1000;
+        color: #A49393;
+    }
+
+    .button:hover {
+        transform: scale(1.05)
+    }
+
+
+
+    /*Middle Column*/
+    .middlecolumn {
+        float: right;
+        width: 50%;
+        /*background-color: #A49393;*/
+        box-sizing: border-box;
+        /*padding: 20px;*/
+        flex-grow: 1;
+        flex: 1;
+        margin-left: 20px;
+        opacity: 0;
+        animation: slideInAnimation 1s ease-in forwards;
+    }
+
+
+
+
+    .coverimage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: white;
+        text-align: center;
+        z-index: 3;
+    }
+
+    .coverimage h1 {
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 50px;
+        text-shadow: 3px 3px 1px #67595E;
+        text-align: center;
+    }
+
+    .coverimage h2 {
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 30px;
+        color: white;
+        text-shadow: 3px 3px 1px #67595E;
+        text-align: center;
+    }
+
+
+    .rightcolumn {
+        /*float: right;*/
+        width: 30%;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
+        margin-left: 20px;
+        flex-grow: 1;
+        margin-left: 0;
+    }
+
+
+    /*singlecolumn*/
+    .singlecolumn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .singlecolumn h1 {
+        color: white;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .singlecolumn h2 {
+        color: white;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .singlecolumn h3 {
+        color: #67595E;
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 25px;
+        text-align: center;
+    }
+
+
+
+
+    .container::after {
+        content: "";
+        flex: 1;
+    }
+
+
+
+
+
+    /*navigation*/
+    .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #67595E;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 100;
+        height: 3rem;
+        margin: 0;
+
+    }
+
+    .nav_ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_ul li {
+        display: inline-block;
+    }
+
+    .nav_ul li a {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #EED6D3;
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .nav_ul li a:hover {
+        background-color: #A49393;
+    }
+
+    .nav_icons {
+        display: flex;
+        align-items: center;
+        flex-grow: 0.2;
+    }
+
+
+    .nav_sm {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_sm li {
+        display: inline-block;
+        margin-left: 20px;
+        /* 添加左側外邊距 */
+    }
+
+    .nav_sm li a {
+        display: inline-block;
+    }
+
+    .nav_sm li a img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+
+    .nav_sm li a:hover img {
+        transform: scale(1.2);
+    }
+
+    .nav_title {
+        flex-grow 修改為 0.6;
+        text-align: center;
+    }
+
+
+    .nav_title h3 {
+        color: #EED6D3;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+    }
+
+    .nav_end {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .nav_end p {
+        width: 100%;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: grey;
+        font-size: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 0.5;
+    }
+
+    .nav_end a {
+        text-decoration: none;
+        color: grey;
+    }
+
+
+    .nav_end li {
+        display: inline-block;
+        /* 设置列表项为行内块元素 */
+        margin: 0 10px;
+        /* 可选：添加列表项的外边距 */
+    }
+
+    .nav_end img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        /* 垂直居中图标 */
+    }
+
+    .nav_end li a:hover img {
+        transform: scale(1.2);
+    }
+
+
+
+    /*換行設定*/
+    .description {
+        width: 100%;
+        /* 让 description 占据一行 */
+    }
+
+
+    /*字體字型大小設定*/
+    .cvselect {
+        padding: 20px;
+        margin: 10px;
+        background-color: #EED6D3;
+        border-radius: 20px;
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #67595E;
+    }
+
+    .cvselect:hover {
+        background-color: white;
+    }
+
+    .container h1 {
+        width: 100%
+    }
+
+
+
+
+    /*圖片*/
+    .image-container {
+        position: relative;
+
+    }
+
+    .image-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* 设置不透明度为 0.5 */
+        z-index: 1;
+        /* 确保遮罩层在图片上方 */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .lanscapeimage {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        position: relative;
+        /* 确保图片在遮罩层下方 */
+        z-index: 0;
+    }
+
+    .image-wrapper {
+        /*padding: 20px;*/
+        /*background-color: #A49393;*/
+        border-top-left-radius: 10px;
+        /* 左上角 */
+        border-top-right-radius: 200px;
+        /* 右上角 */
+        border-bottom-right-radius: 10px;
+        /* 右下角 */
+        border-bottom-left-radius: 200px;
+        /* 左下角 */
+    }
+
+    .homeimage {
+        width: 400px;
+        height: auto;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+        border: 5px solid #EED6D3;
+        text-align: center;
+    }
+
+
+    /*hr*/
+    hr {
+        border: none;
+        height: 2px;
+        background-color: white;
+        margin: 20px 20px;
+        z-index: 200;
+    }
+
+
+    /* 媒體<800px則堆疊 */
+    @media screen and (max-width: 800px) {
+
+        .leftcolumn,
+        .middlecolumn,
+        .rightcolumn,
+        .skillcolumn {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+
+        }
+
+        .leftcolumn h2 {
+            font-size: 15px
+        }
+
+        .leftcolumn h3 {
+            font-size: 10px
+        }
+
+        .coverimage h1 {
+            font-size: 20px
+        }
+
+        .coverimage h2 {
+            font-size: 10px
+        }
+
+        .button h3 {
+            font-size: 10px
+        }
+
+    }
+
+    @media screen and (max-width: 700px) {
+        .homeimage {
+            width: 100%;
+            height: auto;
+            padding: 0;
+        }
+
+        .linktocolumn {
+            width: 100%;
+            padding: 0;
+        }
+
+        .nav_ul li a {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .nav_icons {
+            display: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+            display: none;
+
+        }
+
+        .homeimage {
+            height: 100;
+            border-top-left-radius: 5px;
+            /* 左上角 */
+            border-top-right-radius: 100px;
+            /* 右上角 */
+            border-bottom-right-radius: 5px;
+            /* 右下角 */
+            border-bottom-left-radius: 100px;
+            /* 左下角 */
+            border: 5px solid #EED6D3;
+            /*box-shadow: 5px 5px 1px #A49393;*/
+        }
+
+        .skillcolumn li {
+            line-hight: 1;
+        }
+
+        .button-wrapper {
+            display: block;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!Navigation-->
+    <div class="nav_container">
+        <ul class="nav_ul">
+            <li><a href=index.html>Home</a></li>
+            <li><a href=cv.html>CV</a></li>
+            <li><a href=portfolio.html>Portfolio</a></li>
+            <li><a href=trip.html>Trip</a></li>
+        </ul>
+        <div class="nav_title">
+            <h3>Ching Wen Wang</h3>
+        </div>
+        <div class=nav_icons>
+            <ul class="nav_sm">
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="singlecolumn">
+            <h1>Preparing</h1>
+        </div>
+        <div class="singlecolumn">
+            <img src="pr.png" alt="哭哭貓咪" class="homeimage">
+        </div>
+    </div>
+    <!頁尾-->
+    <div class="container">
+        <div class="nav_end">
+            <p>Design: Ching Wen Wang</p>
+            <p><a href=https://www.flaticon.com/>Social network icon resource: Flaticon</a> </p> <p>Contact Me</p>
+            <ul>
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

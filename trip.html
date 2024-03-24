@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!font Noto Sans Traditional Chinese-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Kaushan Script-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Oswald-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title></title>
+    <link rel="icon" href="web_icon02.png" type="image/png">
+    <style>
+    /*版面設定*/
+    /* Create two unequal columns that floats next to each other */
+    /*放大動畫*/
+    @keyframes slideInAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+            /* 初始位置：向上移动50像素 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* 终止位置：回到原始位置 */
+        }
+    }
+
+
+    body {
+        margin: 0
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin: 0px;
+        background-color: #E8B4B8;
+        justify-content: center;
+    }
+
+
+    .abraodcolumn {
+        width: 20%;
+        background-color: #A49393;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        margin-left: 10px;
+        position: relative;
+        /* 添加相对定位 */
+        flex-grow: 1;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+    }
+
+    .taiwancolumn {
+        width: 15%;
+        background-color: #A49393;
+        box-sizing: border-box;
+        padding: 5px;
+        text-align: center;
+        position: relative;
+        margin: 5px;
+        /* 添加相对定位 */
+        flex-grow: 1;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+    }
+
+    .coverimage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: white;
+        text-align: center;
+    }
+
+    .coverimage h1 {
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 30px;
+        text-shadow: 3px 3px 1px #67595E;
+    }
+
+    .coverimage h2 {
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 20px;
+        text-shadow: 3px 3px 1px #67595E;
+    }
+
+    /*singlecolumn*/
+    .singlecolumn {
+        width: 100%;
+    }
+
+    .singlecolumn h1 {
+        color: white;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .singlecolumn h2 {
+        color: white;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 40px;
+        text-align: center;
+    }
+
+
+    /*navigation*/
+    .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #67595E;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 100;
+        height: 3rem;
+        margin: 0;
+
+    }
+
+    .nav_ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_ul li {
+        display: inline-block;
+    }
+
+    .nav_ul li a {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #EED6D3;
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .nav_ul li a:hover {
+        background-color: #A49393;
+    }
+
+    .nav_icons {
+        display: flex;
+        align-items: center;
+        flex-grow: 0.2;
+    }
+
+
+    .nav_sm {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_sm li {
+        display: inline-block;
+        margin-left: 20px;
+        /* 添加左側外邊距 */
+    }
+
+    .nav_sm li a {
+        display: inline-block;
+    }
+
+    .nav_sm li a img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+
+    .nav_sm li a:hover img {
+        transform: scale(1.2);
+    }
+
+    .nav_title {
+        flex-grow 修改為 0.6;
+        text-align: center;
+    }
+
+
+    .nav_title h3 {
+        color: #EED6D3;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+    }
+
+    .nav_end {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .nav_end p {
+        width: 100%;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: grey;
+        font-size: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 0.5;
+    }
+
+    .nav_end a {
+        text-decoration: none;
+        color: grey;
+    }
+
+
+    .nav_end li {
+        display: inline-block;
+        /* 设置列表项为行内块元素 */
+        margin: 0 10px;
+        /* 可选：添加列表项的外边距 */
+    }
+
+    .nav_end img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        /* 垂直居中图标 */
+    }
+
+    .nav_end li a:hover img {
+        transform: scale(1.2);
+    }
+
+
+
+
+    /*換行設定*/
+    .description {
+        width: 100%;
+        /* 让 description 占据一行 */
+    }
+
+
+    /*hr*/
+    hr {
+        border: none;
+        height: 2px;
+        background-color: white;
+        margin: 20px 20px;
+    }
+
+
+    /*圖片*/
+    .abraodimage {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+    }
+
+    .image-wrapper {
+        /*padding: 20px;*/
+        /*background-color: #A49393;*/
+        border-top-left-radius: 10px;
+        /* 左上角 */
+        border-top-right-radius: 200px;
+        /* 右上角 */
+        border-bottom-right-radius: 10px;
+        /* 右下角 */
+        border-bottom-left-radius: 200px;
+        /* 左下角 */
+    }
+
+    .homeimage {
+        width: 300px;
+        height: auto;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+        border: 5px solid #EED6D3;
+    }
+
+
+    /* 媒體<800px則堆疊 */
+    @media screen and (max-width: 800px) {
+
+        .leftcolumn,
+        .middlecolumn,
+        .rightcolumn,
+        .skillcolumn {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+
+        }
+
+        .leftcolumn h2 {
+            font-size: 15px
+        }
+
+        .leftcolumn h3 {
+            font-size: 10px
+        }
+
+        .coverimage h1 {
+            font-size: 20px;
+        }
+
+        .coverimage h2 {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .homeimage {
+            width: 100%;
+            height: auto;
+            padding: 0;
+        }
+
+        .linktocolumn {
+            width: 100%;
+            padding: 0;
+        }
+
+        .nav_ul li a {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .nav_icons {
+            display: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+            display: none;
+
+        }
+
+        .homeimage {
+            height: 100;
+            border-top-left-radius: 5px;
+            /* 左上角 */
+            border-top-right-radius: 100px;
+            /* 右上角 */
+            border-bottom-right-radius: 5px;
+            /* 右下角 */
+            border-bottom-left-radius: 100px;
+            /* 左下角 */
+            border: 5px solid #EED6D3;
+            /*box-shadow: 5px 5px 1px #A49393;*/
+        }
+
+        .skillcolumn li {
+            line-hight: 1;
+        }
+
+        .abraodcolumn,
+        .taiwancolumn {
+            width: 100%;
+            /* 取消宽度 */
+            display: block;
+            /* 修改为块级元素 */
+            margin: 5px 0;
+            /* 调整堆叠间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <!Navigation-->
+    <div class="nav_container">
+        <ul class="nav_ul">
+            <li><a href=index.html>Home</a></li>
+            <li><a href=cv.html>CV</a></li>
+            <li><a href=portfolio.html>Portfolio</a></li>
+            <li><a href=trip.html>Trip</a></li>
+        </ul>
+        <div class="nav_title">
+            <h3>Ching Wen Wang</h3>
+        </div>
+        <div class=nav_icons>
+            <ul class="nav_sm">
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!Topic-->
+    <div class="container" style="margin-top:30px;" style="padding-top: 110px; padding-bottom :10px;">
+        <div class="singlecolumn">
+            <h1 style="opacity: 1; animation: slideInAnimation 1s ease-in forwards;">Trip</h1>
+        </div>
+    </div>
+    <!Abraod-->
+    <div class="container" style="padding: 50px;">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Abroad</h2>
+        </div>
+        <div class="abraodcolumn">
+            <div class="coverimage">
+                <h1>Turkey</h1>
+                <h2>2018.08</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tu01.jpg" alt="土耳其" class="abraodimage">
+            </div>
+        </div>
+        <div class="abraodcolumn">
+            <div>
+                <div class="coverimage">
+                    <h1>Japan</h1>
+                    <h2>2019.04</h2>
+                </div>
+                <!照片-->
+                <div>
+                    <img src="jp01.jpg" alt="日本" class="abraodimage">
+                </div>
+            </div>
+        </div>
+        <div class="abraodcolumn">
+            <div>
+                <div class="coverimage">
+                    <h1>Philippine</h1>
+                    <h2>2024.01</h2>
+                </div>
+                <!照片-->
+                <div>
+                    <img src="ph03.jpg" alt="菲律賓" class="abraodimage">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!Taiwan-->
+    <!Abraod-->
+    <div class="container" style="padding: 50px;">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Taiwan</h2>
+        </div>
+        <div class="taiwancolumn ">
+            <div class="coverimage">
+                <h1>北部</h1>
+                <h2>老梅綠石嘈</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tw_n01.jpg" alt="北部" class="abraodimage">
+            </div>
+        </div>
+        <div class="taiwancolumn ">
+            <div class="coverimage">
+                <h1>中部</h1>
+                <h2>梅峰</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tw_m01.jpg" alt="中部" class="abraodimage">
+            </div>
+        </div>
+        <div class="taiwancolumn ">
+            <div class="coverimage">
+                <h1>南部</h1>
+                <h2>龍虎塔</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tw_s02.jpg" alt="南部" class="abraodimage">
+            </div>
+        </div>
+        <div class="taiwancolumn ">
+            <div class="coverimage">
+                <h1>東部</h1>
+                <h2>粉鳥林</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tw_e03.jpg" alt="東部" class="abraodimage">
+            </div>
+        </div>
+        <div class="taiwancolumn ">
+            <div class="coverimage">
+                <h1>離島</h1>
+                <h2>龜山島</h2>
+            </div>
+            <!照片-->
+            <div>
+                <img src="tw_i02.jpg" alt="離島" class="abraodimage">
+            </div>
+        </div>
+    </div>
+    <!頁尾-->
+    <div class="container">
+        <div class="nav_end">
+            <p>Design: Ching Wen Wang</p>
+            <p><a href=https://www.flaticon.com/>Social network icon resource: Flaticon</a> </p> <p>Contact Me</p>
+            <ul>
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!font Noto Sans Traditional Chinese-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Kaushan Script-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!font Oswald-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title></title>
+    <link rel="icon" href="web_icon02.png" type="image/png">
+    <style>
+    /*版面設定*/
+    /* Create two unequal columns that floats next to each other */
+    /*放大動畫*/
+    @keyframes slideInAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+            /* 初始位置：向上移动50像素 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* 终止位置：回到原始位置 */
+        }
+    }
+
+
+    body {
+        margin: 0
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin: 0px;
+        background-color: #E8B4B8;
+        justify-content: center;
+    }
+
+
+    /* Left column */
+    .leftcolumn {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 0px;
+        text-align: center;
+        margin-left: 50px;
+        margin-top: 0;
+        opacity: 0;
+        animation: slideInAnimation 1s ease-in forwards;
+        flex-grow: 1;
+    }
+
+
+
+    .leftcolumn h2 {
+        color: #67595E;
+        font-size: 18px;
+        text-align: left;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 800;
+        margin-bottom: -10px;
+        margin-top: 10px;
+
+    }
+
+
+    .leftcolumn h3 {
+        color: #67595E;
+        font-size: 13px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        text-align: left;
+        font-weight: 400;
+
+    }
+
+    /*buttom*/
+    .button {
+        background-color: #F9F1F0;
+        box-shadow: 5px 5px 1px #A49393;
+        width: 30%;
+        text-align: left;
+        border-radius: 10px;
+        padding-top: 0;
+        padding: 5px;
+        padding-left: 0;
+        margin-left: 80px;
+
+    }
+
+    .button h3 {
+        font-weight: 1000;
+        color: #A49393;
+    }
+
+    .button:hover {
+        transform: scale(1.05)
+    }
+
+
+
+    /*Middle Column*/
+    .middlecolumn {
+        float: right;
+        width: 50%;
+        /*background-color: #A49393;*/
+        box-sizing: border-box;
+        /*padding: 20px;*/
+        flex-grow: 1;
+        flex: 1;
+        margin-left: 20px;
+        opacity: 0;
+        animation: slideInAnimation 1s ease-in forwards;
+    }
+
+    .rightcolumn {
+        /*float: right;*/
+        width: 20%;
+        box-sizing: border-box;
+        padding: 5px;
+        text-align: center;
+        margin-left: 30px;
+        flex-grow: 0;
+    }
+
+    .container::after {
+        content: "";
+        flex: 1;
+    }
+
+
+
+
+
+    /*skillcolumn*/
+    .skillcolumn {
+        width: calc(33.33% - 20px);
+        /* 计算每个列的宽度，减去 margin */
+        margin: 5px;
+        /* 添加 margin */
+        display: inline-block;
+        /* 将 display 设置为 inline-block */
+        text-align: left;
+        background-color: white;
+        margin: 10px;
+        display: block;
+        text-align: center;
+        border-radius: 20px;
+        border: 5px solid #E8B4B8;
+        box-sizing: border-box;
+        /* 将边框和填充包括在内，以防止宽度超出 */
+    }
+
+    .skillcolumn ul {
+        list-style-position: inside;
+        padding-left: 0;
+        text-align: left;
+
+        text-decoration: none;
+    }
+
+    .skillcolumn li {
+        text-align: left;
+        padding-left: 20px;
+        color: #67595E;
+        font-size: 20px;
+        line-height: 1.8;
+        font-weight: 300;
+
+    }
+
+    .skillcolumn li span {
+        display: inline-block;
+        text-align: left;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+
+    }
+
+
+
+    .skillcolumn h3 {
+        text-align: center;
+        padding-left: 30px;
+        color: #E8B4B8;
+        font-size: 30px;
+        line-height: 1;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    .skillcolumn h4 {
+        text-align: center;
+        padding-left: 30px;
+        color: #A49393;
+        font-size: 25px;
+        line-height: 1;
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    /*singlecolumn*/
+    .singlecolumn {
+        width: 100%;
+    }
+
+    .singlecolumn h1 {
+        color: white;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .singlecolumn h2 {
+        color: white;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    /*字體字型大小設定*/
+    .cvselect {
+        padding: 20px;
+        margin: 10px;
+        background-color: #EED6D3;
+        border-radius: 20px;
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #67595E;
+    }
+
+    .cvselect:hover {
+        background-color: white;
+    }
+
+    .container h1 {
+        width: 100;
+
+    }
+
+    .research li {
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: #67595E;
+        font-size: 20px;
+
+    }
+
+
+    /*字體字型大小設定*/
+
+    .hometitle {
+        font-size: 80px;
+        color: white;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        text-shadow: 5px 5px 1px #A49393;
+
+    }
+
+    .homecontent {
+        font-size: 20px;
+        color: red
+    }
+
+
+    /*navigation*/
+    .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #67595E;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 100;
+        height: 3rem;
+        margin: 0;
+
+    }
+
+    .nav_ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_ul li {
+        display: inline-block;
+    }
+
+    .nav_ul li a {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #EED6D3;
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .nav_ul li a:hover {
+        background-color: #A49393;
+    }
+
+    .nav_icons {
+        display: flex;
+        align-items: center;
+        flex-grow: 0.2;
+    }
+
+
+    .nav_sm {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav_sm li {
+        display: inline-block;
+        margin-left: 20px;
+        /* 添加左側外邊距 */
+    }
+
+    .nav_sm li a {
+        display: inline-block;
+    }
+
+    .nav_sm li a img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+
+    .nav_sm li a:hover img {
+        transform: scale(1.2);
+    }
+
+    .nav_title {
+        flex-grow 修改為 0.6;
+        text-align: center;
+    }
+
+
+    .nav_title h3 {
+        color: #EED6D3;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+    }
+
+    .nav_end {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .nav_end p {
+        width: 100%;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: grey;
+        font-size: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 0.5;
+    }
+
+    .nav_end a {
+        text-decoration: none;
+        color: grey;
+    }
+
+
+    .nav_end li {
+        display: inline-block;
+        /* 设置列表项为行内块元素 */
+        margin: 0 10px;
+        /* 可选：添加列表项的外边距 */
+    }
+
+    .nav_end img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        /* 垂直居中图标 */
+    }
+
+    .nav_end li a:hover img {
+        transform: scale(1.2);
+    }
+
+
+
+    /*圖片*/
+    .image-wrapper {
+        /*padding: 20px;*/
+        /*background-color: #A49393;*/
+        border-top-left-radius: 10px;
+        /* 左上角 */
+        border-top-right-radius: 200px;
+        /* 右上角 */
+        border-bottom-right-radius: 10px;
+        /* 右下角 */
+        border-bottom-left-radius: 200px;
+        /* 左下角 */
+    }
+
+    .homeimage {
+        width: 300px;
+        height: auto;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+        border: 5px solid #EED6D3;
+    }
+
+    /* 表格 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 2px solid #E8B4B8;
+        padding: 10px;
+        text-align: left;
+        font-size: 20px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    th {
+        border: 2px solid #E8B4B8;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    /* Header row */
+    thead {
+        background-color: #67595E;
+        /* Header background color */
+        color: white;
+        /* Header text color */
+    }
+
+    /* Odd rows */
+    tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+        /* Odd row background color */
+    }
+
+    /* Even rows */
+    tbody tr:nth-child(even) {
+        background-color: #ffffff;
+        /* Even row background color */
+    }
+
+
+
+    /*hr*/
+    hr {
+        border: none;
+        height: 2px;
+        background-color: white;
+        margin: 20px 20px;
+    }
+
+
+    /* 媒體<800px則堆疊 */
+    @media screen and (max-width: 800px) {
+
+        .leftcolumn,
+        .middlecolumn,
+        .rightcolumn,
+        .skillcolumn {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+
+        }
+
+        .leftcolumn h2 {
+            font-size: 15px
+        }
+
+        .leftcolumn h3 {
+            font-size: 10px
+        }
+
+    }
+
+    @media screen and (max-width: 700px) {
+        .homeimage {
+            width: 100%;
+            height: auto;
+            padding: 0;
+        }
+
+        .linktocolumn {
+            width: 100%;
+            padding: 0;
+        }
+
+        .nav_ul li a {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .nav_icons {
+            display: none;
+        }
+
+        .nav_title h3 {
+            font-size: 15px;
+            display: none;
+
+        }
+
+        .homeimage {
+            height: 100;
+            border-top-left-radius: 5px;
+            /* 左上角 */
+            border-top-right-radius: 100px;
+            /* 右上角 */
+            border-bottom-right-radius: 5px;
+            /* 右下角 */
+            border-bottom-left-radius: 100px;
+            /* 左下角 */
+            border: 5px solid #EED6D3;
+            /*box-shadow: 5px 5px 1px #A49393;*/
+        }
+
+        .skillcolumn li {
+            line-hight: 1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!Navigation-->
+    <div class="nav_container">
+        <ul class="nav_ul">
+            <li><a href=index.html>Home</a></li>
+            <li><a href=cv.html>CV</a></li>
+            <li><a href=portfolio.html>Portfolio</a></li>
+            <li><a href=trip.html>Trip</a></li>
+        </ul>
+        <div class="nav_title">
+            <h3>Ching Wen Wang</h3>
+        </div>
+        <div class=nav_icons>
+            <ul class="nav_sm">
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!self intro-->
+    <div class="container" style="margin-top:30px;" style="padding-top: 110px; padding-bottom :10px;">
+        <div class="singlecolumn">
+            <h1 style="opacity: 1; animation: slideInAnimation 1s ease-in forwards;">Self Introduction</h1>
+        </div>
+    </div>
+    <!cv簡介-->
+    <div class="container" style="padding-top: 10px; padding-bottom :20px;">
+        <!照片-->
+        <div class="middlecolumn">
+            <div class="image-wrapper">
+                <img src="me04.jpg" alt="我的照片" class="homeimage">
+            </div>
+        </div>
+        <!自傳-->
+        <div class="leftcolumn">
+            <h3>我是王慶文，目前就讀於臺灣大學園藝暨景觀學系碩二。平常喜歡到處旅行、看展覽、逛街、追劇，對醜醜可愛的東西沒有抵抗力，致力於克服自己的拖延病。</h3>
+            <h2>專業技能：景觀設計</h2>
+            <h3>我熟悉使用各種景觀設計相關軟體，包括Office基本文書軟體、Adobe平面設計軟體、AutoCAD和SketchUp景觀設計軟體、Artlantis和Lumion渲染軟體，以及GIS地理資訊系統軟體，以及基礎python程式語言。。</h3>
+            <h2>語言表達</h2>
+            <h3>長期參加演說比賽和辯論比賽，讓我擁有了出色的語言表達能力，也具備相當的英文表達能力。</h3>
+            <h2>研究</h2>
+            <h3>研究方面，我曾進行行道樹選種進行相關研究，成果發表於期刊《Landscape and Ecological Engineering》，目前正致力於寵物旅遊相關研究，預計今年完成碩士論文。</h3>
+            <h2>實習經驗</h2>
+            <h3>我曾到農場進行果園管理與種植的實習，從是包含噴藥、採收等實務工作，讓我了解植物特性和管理方式。在景觀工程公司進行為期兩個月的實習，讓我接觸了景觀施工圖，實際參與了石材分割與磁磚配置的計畫與施工圖計量，深刻了解景觀產業。</h3>
+            <h2>活動與社團</h2>
+            <h3>在校期間，我曾擔任園藝週的執行長、系學會的副總幹事等職務，讓我學習了許多跨領域技能，並培養了我的領導能力、溝通技巧和問題解決能力。</h3>
+            <h3>如果要我為自己下一個關鍵字，那會是「嘗試」，我喜歡挑戰自己的極限，學習跨領域的技能，尋覓更廣闊的未來定位。</h3>
+        </div>
+        <!選項-->
+        <div class="rightcolumn">
+            <a href=#education>
+                <h3 class="cvselect">Education</h3>
+            </a>
+            <a href=#skill>
+                <h3 class="cvselect">Skill</h3>
+            </a>
+            <a href=#research>
+                <h3 class="cvselect">Research</h3>
+            </a>
+            <a href=#intern>
+                <h3 class="cvselect">Intern</h3>
+            </a>
+            <a href=#club>
+                <h3 class="cvselect">Club & Activity</h3>
+            </a>
+            </ul>
+        </div>
+    </div>
+    <!education-->
+    <div id="education" class="container" style="padding: 50px;">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Education</h2>
+        </div>
+        <table width="100%" height=auto border=1 style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>School</th>
+                    <th>Major</th>
+                    <th>Graduate</th>
+                </tr>
+            </thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>University</td>
+                    <td>National Chung Hsing University</td>
+                    <td>Department of Horticulture</td>
+                    <td>2021</td>
+                </tr>
+                <tr>
+                    <td>Highschool</td>
+                    <td>Kaohsiung Girl's Senior High School</td>
+                    <td>General</td>
+                    <td>2018</td>
+            </tbody>
+        </table>
+    </div>
+    <!skill-->
+    <div id="skill" class="container" style="padding-left: 50px;padding-right: 50px;">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Skill</h2>
+        </div>
+        <div style="clear:both"></div>
+        <div class="skillcolumn">
+            <h3>Computer and Technical</h3>
+            <ul>
+                <li>office : word, power point, excel</li>
+                <li>design :photoshop, illustrator</li>
+                <li>landscape : AutoCad, SketchUp</li>
+                <li>rendering: Artlantis, Lumion</li>
+                <li>GIS: ArcGIS, Survey123</li>
+                <li>programming: Python</li>
+            </ul>
+        </div>
+        <div class="skillcolumn">
+            <h3>Language</h3>
+            <h4>English</h4>
+            <ul>
+                <li>TOEIC 845</li>
+                <li>GEPT High-Intermediate Preliminary Test</li>
+            </ul>
+            <h4>Chinese</h4>
+            <ul>
+                <li>NCHU Impromptu Speech Merit Award</li>
+                <li>KGHS Graduation Ceremony Student Representative</li>
+                <li>鳳凰盃 Debate Competition First Place</li>
+                <li>晨曦盃 Debate Competition Second Place</li>
+            </ul>
+        </div>
+        <div class="skillcolumn">
+            <h3>Art</h3>
+            <ul>
+                <li>National Student Art Competition Graphic Design Honorable Mention</li>
+            </ul>
+            <h3>Driver License</h3>
+            <ul>
+                <li>car</li>
+                <li>motorcycle</li>
+            </ul>
+        </div>
+    </div>
+    <!Research-->
+    <div id="research" class="container">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Research</h2>
+        </div>
+        <ul class="research">
+            <li>大專生研究計畫：行道樹選種層級分析研究(109-110年)</li>
+            <li>Evaluating criteria weights of street tree selection between residents and experts(Wang and Tu, 2022)</li>
+            <li>犬隻飼主進行寵物旅遊的阻礙、協商與旅遊期望(預計2024年發表)</li>
+        </ul>
+    </div>
+    <!Intern-->
+    <div id="intern" class="container">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Intern</h2>
+        </div>
+        <table width="100%" height=auto border=1 style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <td>Work Place</td>
+                    <td>Job</td>
+                    <td>Description</td>
+                    <td>Working Time</td>
+                </tr>
+            </thead>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>上森景觀公司</td>
+                    <td>實習生</td>
+                    <td>1.石材及磁磚計畫
+                        2.施工圖計量
+                        3.簡報製作
+                    <td>110.07-08</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>中興大學</td>
+                    <td>工讀生</td>
+                    <td>展場介紹人員</td>
+                    <td>110.03</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>將豪農場</td>
+                    <td>實習生</td>
+                    <td>果樹栽培</td>
+                    <td>108.07</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <!Club-->
+    <div id="club" class="container">
+        <div class="singlecolumn">
+            <hr>
+        </div>
+        <div class="singlecolumn">
+            <h2>Club and Activity</h2>
+        </div>
+        <table width="100%" height=auto border=1 style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <td>Club/Activity</td>
+                    <td>Job</td>
+                    <td>Description</td>
+                    </td>
+                    <td>Working Time</td>
+                </tr>
+            </thead>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>園藝系學會</td>
+                    <td>副總幹事</td>
+                    <td>協助總幹事並協調學會幹部</td>
+                    <td>109 semester</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>西畫社</td>
+                    <td>副社長</td>
+                    <td>協助社長處理社團事務</td>
+                    <td>108 semester</td>
+                </tr>
+            </tbody>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>關懷生命社</td>
+                    <td>美工長</td>
+                    <td>社團浪浪募款產品製作、文宣海報</td>
+                    <td>109 semester</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>農業服務團</td>
+                    <td>活動長</td>
+                    <td>協助支援各項活動的進行</td>
+                    <td>109 semester</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>園藝週</td>
+                    <td>執行長</td>
+                    <td>統籌整個活動、協調幹部事務</td>
+                    <td>109 semester</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>畢業花束</td>
+                    <td>宣銷長</td>
+                    <td>宣傳及管理粉絲團、處理顧客事宜</td>
+                    <td>108 semester</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>園藝之夜</td>
+                    <td>公關長</td>
+                    <td>邀請函製作、來賓邀請</td>
+                    <td>109 semester</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!頁尾-->
+    <div class="container">
+        <div class="nav_end">
+            <p>Design: Ching Wen Wang</p>
+            <p><a href=https://www.flaticon.com/>Social network icon resource: Flaticon</a> </p> <p>Contact Me</p>
+            <ul>
+                <li><a href=https://www.facebook.com/profile.php?id=100007368459287&mibextid=LQQJ4d> <img src="fb.png" alt=" facebook"></a></li>
+                <li><a href=https://www.instagram.com/vin0_0owo?igsh=MTdpNTJiazgxbndhZA%3D%3D&utm_source=qr> <img src="ig.png" alt="instagrem"></a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    /*font Noto Sans Traditional Chinese*/
+    <!font Noto Sans Traditional Chinese-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-    /*font Kaushan Script*/
+    <!font Kaushan Script-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-    /*font Oswald*/
+    <!font Oswald-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title></title>
+    <link rel="icon" href="web_icon02.png" type="image/png">
     <style>
     /*版面設定*/
     /* Create two unequal columns that floats next to each other */
@@ -96,6 +97,7 @@
         line-height: 2;
     }
 
+    /*buttom*/
     .button {
         background-color: #F9F1F0;
         box-shadow: 5px 5px 1px #A49393;
@@ -261,9 +263,11 @@
         top: 0px;
         width: 100%;
         z-index: 100;
-        height: 7%;
+        height: 3rem;
+        margin: 0;
 
     }
+
 
     .nav_ul {
         list-style-type: none;
@@ -329,9 +333,12 @@
         transform: scale(1.2);
     }
 
-    .nav_title {
-        flex-grow 修改為 0.6;
-        text-align: center;
+    .nav_title h3 {
+        color: #EED6D3;
+        font-family: "Kaushan Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
     }
 
 
@@ -430,6 +437,19 @@
         box-shadow: 10px 10px 1px #A49393;
     }
 
+    .decimage {
+        height: 375px;
+        border-top-left-radius: 20px;
+        /* 左上角 */
+        border-top-right-radius: 20px;
+        /* 右上角 */
+        border-bottom-right-radius: 20px;
+        /* 右下角 */
+        border-bottom-left-radius: 20px;
+        /* 左下角 */
+        border: 5px solid#A49393;
+    }
+
     /* 媒體<800px則堆疊 */
     @media screen and (max-width: 800px) {
 
@@ -466,20 +486,6 @@
             padding: 0;
         }
 
-        .nav_ul {
-            padding-left: 0px;
-            width: 100%;
-            display: block;
-        }
-
-        .nav_ul li {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-            height: 5%;
-
-        }
 
         .nav_ul li a {
             text-align: center;
@@ -561,7 +567,7 @@
             </div>
             <div style="clear:both"></div>
             <div class="piccolumn">
-                <h3>pic</h3>
+                <img src="me05.jpg" alt="我的照片" class="decimage">
             </div>
             <div class="skillcolumn">
                 <a href="cv.html">
@@ -597,7 +603,7 @@
                 </ul>
             </div>
             <div class="piccolumn">
-                <h3>pic</h3>
+                <img src="me06.jpg" alt="我的照片" class="decimage">
             </div>
         </div>
     </div>
@@ -612,6 +618,7 @@
                 <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=vin0830@gmail.com" target="_blank"><img src="gmail.png" alt="email"></a></li>
             </ul>
         </div>
+    </div>
 </body>
 
 </html>
